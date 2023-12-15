@@ -35,4 +35,6 @@ export function ItemMusicComponent({ music }: ItemMusicProps) {
   )
 }
 
-export const ItemMusic = memo(ItemMusicComponent)
+export const ItemMusic = memo(ItemMusicComponent, (prevProps, nextProps) => {
+  return Object.is(prevProps.music, nextProps.music)
+})
