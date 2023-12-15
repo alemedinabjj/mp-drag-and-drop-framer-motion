@@ -1,4 +1,5 @@
-import songs from './data/songs.json';
+import { ListMusic } from './components/ListMusic'
+import songs from './data/songs.json'
 
 function App() {
   return (
@@ -11,29 +12,12 @@ function App() {
         </div>
         <div className="">
           <div>
-            {songs.map((song) => (
-              <div
-                key={song.id}
-                className="flex items-center w-full gap-6 p-4 mx-auto mb-4 card "
-              >
-                <span className="text-slate-400 border-slate-200 cursor-grab">
-                  <img src="/grab-icon.svg" alt="grab icon" className="w-8 h-8" />
-                </span>
-                <img src={song.image} alt="" className="w-14 hue-rotate-30" />
-                <div className="w-full card-header">
-                  <div className="flex items-center justify-between">
-                    <h3 className="font-bold ">{song.title}</h3>
-                    <p className="text-sm text-slate-600">{song.duration}</p>
-                  </div>
-                  <p className="text-sm text-slate-400">{song.artist}</p>
-                </div>
-              </div>
-            ))}
+            <ListMusic musics={songs} />
           </div>
         </div>
       </div>
     </div>
-  );
+  )
 }
 
-export default App;
+export default App
